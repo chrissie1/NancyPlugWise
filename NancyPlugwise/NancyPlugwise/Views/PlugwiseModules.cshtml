@@ -1,0 +1,33 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyPlugwise.Model.PlugwiseModulesModel>
+@{
+    ViewBag.Title = "Modules";
+    Layout = "Master.cshtml";
+}
+
+@section modules
+
+<h2>Modules</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Mac</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Powerusage</th>
+        <th>Relaystate</th>
+        <th>Appliance</th>
+    </tr>
+    @foreach (var module in @Model.Modules)
+    {
+        <tr>
+            <td><a href="/Modules/@module.Id">@module.Id</a></td>
+            <td>@module.Mac</td>
+            <td>@module.Name</td>
+            <td>@module.Type</td>
+            <td>@module.PowerUsage</td>
+            <td>@module.RelayState</td>
+            <td>@module.Appliance</td>
+        </tr>
+    }
+</table>

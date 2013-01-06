@@ -1,0 +1,35 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<NancyPlugwise.Model.PlugwiseAppliancesModel>
+@{
+    ViewBag.Title = "Appliances";
+    Layout = "Master.cshtml";
+}
+
+@section appliances
+
+<h2>Modules</h2>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Module</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Powerusage</th>
+        <th>TotalUsage</th>
+        <th>PowerState</th>
+        <th>Image</th>
+    </tr>
+    @foreach (var appliance in @Model.Appliances)
+    {
+        <tr>
+            <td>@appliance.Id</td>
+            <td>@appliance.Module</td>
+            <td>@appliance.Name</td>
+            <td>@appliance.Type</td>
+            <td>@appliance.PowerUsage</td>
+            <td>@appliance.TotalUsage</td>
+            <td>@appliance.PowerState</td>
+            <td>@appliance.Image</td>
+        </tr>
+    }
+</table>

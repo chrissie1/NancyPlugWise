@@ -1,0 +1,34 @@
+﻿@using Nancy
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Css/style.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="menu-wrapper">
+        <div id="menu">
+            <ul>
+                <li @if (IsSectionDefined("home")) { <text>class="current_page_item"</text>}><a href="/">Home</a></li>
+                <li @if (IsSectionDefined("modules")) { <text>class="current_page_item"</text>}><a href="/modules">Modules</a></li>
+                <li @if (IsSectionDefined("appliances")) { <text>class="current_page_item"</text>}><a href="/appliances">Appliances</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="header-wrapper">
+        <div id="header">
+            <div id="logo">
+                <h1><a href="#">Plugwise <span>Christiaan Baes</span></a></h1>
+            </div>
+        </div>
+    </div>
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>
